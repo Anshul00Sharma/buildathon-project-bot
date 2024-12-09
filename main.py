@@ -7,16 +7,18 @@ import time
 from langchain_openai import ChatOpenAI
 from agent import generate_Tweet_text, reply
 import schedule
-
 from dotenv import load_dotenv
 import os
-load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-USERNAME = os.getenv("USERNAME")
-PASSWORD = os.getenv("PASSWORD")
+
 
 def main():
+    load_dotenv()
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    USERNAME = os.getenv("uname")
+    PASSWORD = os.getenv("upass")
     client = Client()
+    print(USERNAME)
+    print(PASSWORD)
     profile = client.login(USERNAME, PASSWORD)
     llm = ChatOpenAI(temperature=.5, openai_api_key=OPENAI_API_KEY, model_name='gpt-4o')
     print('Welcome,', profile.display_name)

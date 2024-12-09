@@ -1,0 +1,5 @@
+langchain_core
+atproto
+datetime
+langchain_openai
+schedule
